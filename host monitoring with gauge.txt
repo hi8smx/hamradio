@@ -1,0 +1,581 @@
+[
+    {
+        "id": "3f1c9fe7.0d59",
+        "type": "tab",
+        "label": "Host Monitor",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "9cf5a84d.80f168",
+        "type": "ping",
+        "z": "3f1c9fe7.0d59",
+        "mode": null,
+        "name": "Internet",
+        "host": "www.google.com",
+        "timer": "20",
+        "inputs": 0,
+        "x": 90,
+        "y": 60,
+        "wires": [
+            [
+                "adcf621e.f490d",
+                "43b23702.cf5958",
+                "7f1aff2e.f214f"
+            ]
+        ]
+    },
+    {
+        "id": "d57e7d2e.0fbd7",
+        "type": "ui_text",
+        "z": "3f1c9fe7.0d59",
+        "group": "4221903.033657",
+        "order": 6,
+        "width": 4,
+        "height": 1,
+        "name": "",
+        "label": "Internet",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 580,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "60fbb453.7f8fcc",
+        "type": "ping",
+        "z": "3f1c9fe7.0d59",
+        "mode": null,
+        "name": "Flex 6300",
+        "host": "10.0.0.78",
+        "timer": "60",
+        "inputs": 0,
+        "x": 90,
+        "y": 280,
+        "wires": [
+            [
+                "f58a8a20.b1a668",
+                "12d644dc.22692b",
+                "9176ce20.c2771"
+            ]
+        ]
+    },
+    {
+        "id": "83df546d.31b038",
+        "type": "ui_text",
+        "z": "3f1c9fe7.0d59",
+        "group": "4221903.033657",
+        "order": 5,
+        "width": 4,
+        "height": 1,
+        "name": "",
+        "label": "Flex 6300",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 450,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "5b98a76e.6849c8",
+        "type": "ping",
+        "z": "3f1c9fe7.0d59",
+        "mode": null,
+        "name": "PC",
+        "host": "10.0.0.78",
+        "timer": "60",
+        "inputs": 0,
+        "x": 110,
+        "y": 460,
+        "wires": [
+            [
+                "ce924da3.2868",
+                "e86e1695.a399a8",
+                "ead5e84e.a022a8"
+            ]
+        ]
+    },
+    {
+        "id": "f241c77f.16b6a8",
+        "type": "ui_text",
+        "z": "3f1c9fe7.0d59",
+        "group": "4221903.033657",
+        "order": 7,
+        "width": 4,
+        "height": 1,
+        "name": "PC",
+        "label": "PC",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 490,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "e44234cf.99d758",
+        "type": "ping",
+        "z": "3f1c9fe7.0d59",
+        "mode": null,
+        "name": "RPI - Modem",
+        "host": "10.0.0.30",
+        "timer": "60",
+        "inputs": 0,
+        "x": 90,
+        "y": 640,
+        "wires": [
+            [
+                "dac19e9.6a8686",
+                "62f9b93c.592788",
+                "426b7a06.d95b44"
+            ]
+        ]
+    },
+    {
+        "id": "e3a0151c.7bb618",
+        "type": "ui_text",
+        "z": "3f1c9fe7.0d59",
+        "group": "4221903.033657",
+        "order": 8,
+        "width": 4,
+        "height": 1,
+        "name": "RPI - Modem",
+        "label": "RPI - Modem",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 540,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "adcf621e.f490d",
+        "type": "smooth",
+        "z": "3f1c9fe7.0d59",
+        "name": "",
+        "property": "payload",
+        "action": "mean",
+        "count": "1",
+        "round": "1",
+        "mult": "single",
+        "x": 280,
+        "y": 80,
+        "wires": [
+            [
+                "f8b8bba.34e0348",
+                "d57e7d2e.0fbd7"
+            ]
+        ]
+    },
+    {
+        "id": "f58a8a20.b1a668",
+        "type": "smooth",
+        "z": "3f1c9fe7.0d59",
+        "name": "",
+        "property": "payload",
+        "action": "mean",
+        "count": "2",
+        "round": "1",
+        "mult": "single",
+        "x": 290,
+        "y": 280,
+        "wires": [
+            [
+                "83df546d.31b038"
+            ]
+        ]
+    },
+    {
+        "id": "ce924da3.2868",
+        "type": "smooth",
+        "z": "3f1c9fe7.0d59",
+        "name": "",
+        "property": "payload",
+        "action": "mean",
+        "count": "1",
+        "round": "2",
+        "mult": "single",
+        "x": 320,
+        "y": 460,
+        "wires": [
+            [
+                "f241c77f.16b6a8"
+            ]
+        ]
+    },
+    {
+        "id": "dac19e9.6a8686",
+        "type": "smooth",
+        "z": "3f1c9fe7.0d59",
+        "name": "",
+        "property": "payload",
+        "action": "mean",
+        "count": "2",
+        "round": "1",
+        "mult": "single",
+        "x": 320,
+        "y": 640,
+        "wires": [
+            [
+                "e3a0151c.7bb618"
+            ]
+        ]
+    },
+    {
+        "id": "f8b8bba.34e0348",
+        "type": "ui_chart",
+        "z": "3f1c9fe7.0d59",
+        "name": "",
+        "group": "ba3d6868.2d2ac8",
+        "order": 1,
+        "width": 6,
+        "height": 4,
+        "label": "Internet",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 580,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b9cb793c.bb9a48",
+        "type": "ui_led",
+        "z": "3f1c9fe7.0d59",
+        "group": "4221903.033657",
+        "order": 16,
+        "width": 2,
+        "height": 1,
+        "label": "Raspi",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "red",
+                "value": "false",
+                "valueType": "bool"
+            },
+            {
+                "color": "green",
+                "value": "true",
+                "valueType": "bool"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "name": "Raspi",
+        "x": 530,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "62f9b93c.592788",
+        "type": "function",
+        "z": "3f1c9fe7.0d59",
+        "name": "",
+        "func": "\nvar trueMsg = { payload: true };\nvar falseMsg = { payload: false };\n\n\nif(msg.payload===false)\n{\n    return falseMsg; \n}\nelse{\n        return trueMsg; \n\n}\n\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 310,
+        "y": 580,
+        "wires": [
+            [
+                "b9cb793c.bb9a48"
+            ]
+        ]
+    },
+    {
+        "id": "426b7a06.d95b44",
+        "type": "ui_gauge",
+        "z": "3f1c9fe7.0d59",
+        "name": "",
+        "group": "4221903.033657",
+        "order": 4,
+        "width": 4,
+        "height": 3,
+        "gtype": "gage",
+        "title": "Raspi",
+        "label": "ms",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "10",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "2",
+        "seg2": "6",
+        "x": 310,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "43b23702.cf5958",
+        "type": "function",
+        "z": "3f1c9fe7.0d59",
+        "name": "",
+        "func": "\nvar trueMsg = { payload: true };\nvar falseMsg = { payload: false };\n\n\nif(msg.payload===false)\n{\n    return falseMsg; \n}\nelse{\n        return trueMsg; \n\n}\n\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 280,
+        "y": 40,
+        "wires": [
+            [
+                "b6fccb39.33aa98"
+            ]
+        ]
+    },
+    {
+        "id": "12d644dc.22692b",
+        "type": "function",
+        "z": "3f1c9fe7.0d59",
+        "name": "",
+        "func": "\nvar trueMsg = { payload: true };\nvar falseMsg = { payload: false };\n\n\nif(msg.payload===false)\n{\n    return falseMsg; \n}\nelse{\n        return trueMsg; \n\n}\n\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 280,
+        "y": 220,
+        "wires": [
+            [
+                "3dbf1546.0c29fa"
+            ]
+        ]
+    },
+    {
+        "id": "e86e1695.a399a8",
+        "type": "function",
+        "z": "3f1c9fe7.0d59",
+        "name": "",
+        "func": "\nvar trueMsg = { payload: true };\nvar falseMsg = { payload: false };\n\n\nif(msg.payload===false)\n{\n    return falseMsg; \n}\nelse{\n        return trueMsg; \n\n}\n\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 310,
+        "y": 400,
+        "wires": [
+            [
+                "a013df81.f547c"
+            ]
+        ]
+    },
+    {
+        "id": "b6fccb39.33aa98",
+        "type": "ui_led",
+        "z": "3f1c9fe7.0d59",
+        "group": "4221903.033657",
+        "order": 12,
+        "width": 2,
+        "height": 1,
+        "label": "Internet",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "red",
+                "value": "false",
+                "valueType": "bool"
+            },
+            {
+                "color": "green",
+                "value": "true",
+                "valueType": "bool"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "name": "Internet",
+        "x": 470,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "3dbf1546.0c29fa",
+        "type": "ui_led",
+        "z": "3f1c9fe7.0d59",
+        "group": "4221903.033657",
+        "order": 10,
+        "width": 2,
+        "height": 1,
+        "label": "Flex",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "red",
+                "value": "false",
+                "valueType": "bool"
+            },
+            {
+                "color": "green",
+                "value": "true",
+                "valueType": "bool"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "name": "Flex",
+        "x": 610,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "a013df81.f547c",
+        "type": "ui_led",
+        "z": "3f1c9fe7.0d59",
+        "group": "4221903.033657",
+        "order": 14,
+        "width": 2,
+        "height": 1,
+        "label": "PC",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "red",
+                "value": "false",
+                "valueType": "bool"
+            },
+            {
+                "color": "green",
+                "value": "true",
+                "valueType": "bool"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "name": "PC",
+        "x": 510,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "ead5e84e.a022a8",
+        "type": "ui_gauge",
+        "z": "3f1c9fe7.0d59",
+        "name": "",
+        "group": "4221903.033657",
+        "order": 3,
+        "width": 4,
+        "height": 3,
+        "gtype": "gage",
+        "title": "PC",
+        "label": "ms",
+        "format": "{{value}}",
+        "min": 0,
+        "max": 10,
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "2",
+        "seg2": "6",
+        "x": 320,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "9176ce20.c2771",
+        "type": "ui_gauge",
+        "z": "3f1c9fe7.0d59",
+        "name": "",
+        "group": "4221903.033657",
+        "order": 1,
+        "width": 4,
+        "height": 3,
+        "gtype": "gage",
+        "title": "Flex 6300",
+        "label": "ms",
+        "format": "{{value}}",
+        "min": 0,
+        "max": 10,
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "2",
+        "seg2": "6",
+        "x": 290,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "7f1aff2e.f214f",
+        "type": "ui_gauge",
+        "z": "3f1c9fe7.0d59",
+        "name": "",
+        "group": "4221903.033657",
+        "order": 2,
+        "width": 4,
+        "height": 3,
+        "gtype": "gage",
+        "title": "Internet",
+        "label": "ms",
+        "format": "{{value}}",
+        "min": 0,
+        "max": 10,
+        "colors": [
+            "#36b300",
+            "#e6e600",
+            "#cb3a3a"
+        ],
+        "seg1": "2",
+        "seg2": "6",
+        "x": 290,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "4221903.033657",
+        "type": "ui_group",
+        "z": "",
+        "name": "Hosts Pings",
+        "tab": "df79697c.d2e518",
+        "order": 1,
+        "disp": true,
+        "width": "16",
+        "collapse": false
+    },
+    {
+        "id": "ba3d6868.2d2ac8",
+        "type": "ui_group",
+        "z": "",
+        "name": "Hosts (ms)",
+        "tab": "df79697c.d2e518",
+        "order": 2,
+        "disp": true,
+        "width": 6,
+        "collapse": false
+    },
+    {
+        "id": "df79697c.d2e518",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Host Monitoring",
+        "icon": "dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    }
+]
