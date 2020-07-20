@@ -1,0 +1,332 @@
+[
+    {
+        "id": "9a977de5.1e9c9",
+        "type": "tab",
+        "label": "DLI",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "858e3d26.e262e",
+        "type": "mqtt out",
+        "z": "9a977de5.1e9c9",
+        "name": "PC",
+        "topic": "DLI/outlets/0/set",
+        "qos": "",
+        "retain": "",
+        "broker": "c59a56ee.250a68",
+        "x": 690,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "265a36fb.d70daa",
+        "type": "mqtt out",
+        "z": "9a977de5.1e9c9",
+        "name": "Flex Power",
+        "topic": "DLI/outlets/1/set",
+        "qos": "",
+        "retain": "",
+        "broker": "c59a56ee.250a68",
+        "x": 720,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "3ccbb445.3470dc",
+        "type": "mqtt out",
+        "z": "9a977de5.1e9c9",
+        "name": "Flex Remote",
+        "topic": "DLI/outlets/2/set",
+        "qos": "",
+        "retain": "",
+        "broker": "c59a56ee.250a68",
+        "x": 740,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "e9f553c9.3a0eb",
+        "type": "mqtt out",
+        "z": "9a977de5.1e9c9",
+        "name": "HF Auto",
+        "topic": "DLI/outlets/3/set",
+        "qos": "",
+        "retain": "",
+        "broker": "c59a56ee.250a68",
+        "x": 740,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "56eeb108.4989a",
+        "type": "mqtt out",
+        "z": "9a977de5.1e9c9",
+        "name": "DCU 2",
+        "topic": "DLI/outlets/4/set",
+        "qos": "",
+        "retain": "",
+        "broker": "c59a56ee.250a68",
+        "x": 720,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "ccee40e8.1f0d2",
+        "type": "mqtt out",
+        "z": "9a977de5.1e9c9",
+        "name": "FT-991",
+        "topic": "DLI/outlets/6/set",
+        "qos": "",
+        "retain": "",
+        "broker": "c59a56ee.250a68",
+        "x": 720,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "5744419b.32b65",
+        "type": "mqtt out",
+        "z": "9a977de5.1e9c9",
+        "name": "Pi3",
+        "topic": "DLI/outlets/6/set",
+        "qos": "",
+        "retain": "",
+        "broker": "c59a56ee.250a68",
+        "x": 700,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "12372b14.289825",
+        "type": "mqtt out",
+        "z": "9a977de5.1e9c9",
+        "name": "MFJ Injector",
+        "topic": "DLI/outlets/7/set",
+        "qos": "",
+        "retain": "",
+        "broker": "c59a56ee.250a68",
+        "x": 740,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "65bb077c.c5a628",
+        "type": "ui_template",
+        "z": "9a977de5.1e9c9",
+        "group": "4b52fb24.f33964",
+        "name": "PC",
+        "order": 1,
+        "width": 3,
+        "height": 2,
+        "format": "<table style=\"width: 100%; text-align: center;\">\n   <tr>\n      <td>\n         <span style=\"vertical-align: middle;font-weight: bold;\">PC</span>\n      </td>\n    </tr>\n    <tr>\n      <td> \n        <label class=\"rocker rocker-mid\">\n        <input type=\"checkbox\" ng-model=\"msg.payload\" ng-change=\"send(msg)\" checked>\n        <md-tooltip md-direction=\"top\">Turn PC On or OFF!</md-tooltip>\n        <span class=\"switch-left\">On</span>\n        <span class=\"switch-right\">Off</span>\n  </label>\n      </td>\n   </tr>\n</table>\n\n<style>\n    html {\n  box-sizing: border-box;\n  font-family: 'Arial', sans-serif;\n  font-size: 100%;\n}\n*, *:before, *:after {\n  box-sizing: inherit;\n  margin:0;\n  padding:0;\n}\n\n/* Switch starts here */\n.rocker {\n  display: inline-block;\n  position: relative;\n  /*\n  SIZE OF SWITCH\n  ==============\n  All sizes are in em - therefore\n  changing the font-size here\n  will change the size of the switch.\n  See .rocker-small below as example.\n  */\n  font-size: 0.38em;\n  font-weight: bold;\n  text-align: center;\n  text-transform: uppercase;\n  color: #888;\n  width: 7em;\n  height: 4em;\n  overflow: hidden;\n  border-bottom: 0.5em solid #eee;\n}\n\n.rocker-small {\n  font-size: 0.39em; /* Sizes the switch */\n  margin: 0em;\n}\n\n.rocker-mid {\n  font-size: 1.1em; /* Sizes the switch */\n  margin: 0em;\n}\n\n.rocker::before {\n  content: \"\";\n  position: absolute;\n  top: 0.5em;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  background-color: #999;\n  border: 0.5em solid #eee;\n  border-bottom: 0;\n}\n\n.rocker input {\n  opacity: 0;\n  width: 0;\n  height: 0;\n}\n\n.switch-left,\n.switch-right {\n  cursor: pointer;\n  position: absolute;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  height: 2.5em;\n  width: 3em;\n  transition: 0.2s;\n}\n\n.switch-left {\n  height: 2.4em;\n  width: 2.75em;\n  left: 0.85em;\n  bottom: 0.4em;\n  background-color: #ccc;\n  transform: rotate(15deg) skewX(15deg);\n}\n\n.switch-right {\n  right: 0.5em;\n  bottom: 0;\n  background-color: #bd5757;\n  color: #fff;\n}\n\n.switch-left::before,\n.switch-right::before {\n  content: \"\";\n  position: absolute;\n  width: 0.4em;\n  height: 2.45em;\n  bottom: -0.45em;\n  background-color: #ccc;\n  transform: skewY(-65deg);\n}\n\n.switch-left::before {\n  left: -0.4em;\n}\n\n.switch-right::before {\n  right: -0.375em;\n  background-color: transparent;\n  transform: skewY(65deg);\n}\n\ninput:checked + .switch-left {\n  background-color: #008000;\n  color: #fff;\n  bottom: 0px;\n  left: 0.5em;\n  height: 2.5em;\n  width: 3em;\n  transform: rotate(0deg) skewX(0deg);\n}\n\ninput:checked + .switch-left::before {\n  background-color: transparent;\n  width: 3.0833em;\n}\n\ninput:checked + .switch-left + .switch-right {\n  background-color: #ddd;\n  color: #888;\n  bottom: 0.4em;\n  right: 0.8em;\n  height: 2.4em;\n  width: 2.75em;\n  transform: rotate(-15deg) skewX(-15deg);\n}\n\ninput:checked + .switch-left + .switch-right::before {\n  background-color: #ccc;\n}\n\n/* Keyboard Users */\ninput:focus + .switch-left {\n  color: #333;\n}\n\ninput:checked:focus + .switch-left {\n  color: #fff;\n}\n\ninput:focus + .switch-left + .switch-right {\n  color: #fff;\n}\n\ninput:checked:focus + .switch-left + .switch-right {\n  color: #333;\n}\n</style>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "x": 390,
+        "y": 200,
+        "wires": [
+            [
+                "858e3d26.e262e"
+            ]
+        ]
+    },
+    {
+        "id": "62ed8d04.7584a4",
+        "type": "ui_template",
+        "z": "9a977de5.1e9c9",
+        "group": "4b52fb24.f33964",
+        "name": "Flex Power",
+        "order": 2,
+        "width": 3,
+        "height": 2,
+        "format": "<table style=\"width: 50%; text-align: center;\">\n   <tr>\n      <td>\n         <span style=\"vertical-align: middle;font-weight: bold;\">Flex Power</span>\n      </td>\n    </tr>\n    <tr>\n      <td> \n        <label class=\"rocker rocker-mid\">\n        <input type=\"checkbox\" ng-model=\"msg.payload\" ng-change=\"send(msg)\" checked>\n        <md-tooltip md-direction=\"top\">Turn Flex Power On or OFF!</md-tooltip>\n        <span class=\"switch-left\">On</span>\n        <span class=\"switch-right\">Off</span>\n  </label>\n      </td>\n   </tr>\n</table>\n\n<style>\n    html {\n  box-sizing: border-box;\n  font-family: 'Arial', sans-serif;\n  font-size: 75%;\n}\n*, *:before, *:after {\n  box-sizing: inherit;\n  margin:0;\n  padding:0;\n}\n\n/* Switch starts here */\n.rocker {\n  display: inline-block;\n  position: relative;\n  /*\n  SIZE OF SWITCH\n  ==============\n  All sizes are in em - therefore\n  changing the font-size here\n  will change the size of the switch.\n  See .rocker-small below as example.\n  */\n  font-size: 0.38em;\n  font-weight: bold;\n  text-align: center;\n  text-transform: uppercase;\n  color: #888;\n  width: 7em;\n  height: 4em;\n  overflow: hidden;\n  border-bottom: 0.5em solid #eee;\n}\n\n.rocker-small {\n  font-size: 0.39em; /* Sizes the switch */\n  margin: 0em;\n}\n\n.rocker-mid {\n  font-size: 1.1em; /* Sizes the switch */\n  margin: 0em;\n}\n\n.rocker::before {\n  content: \"\";\n  position: absolute;\n  top: 0.5em;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  background-color: #999;\n  border: 0.5em solid #eee;\n  border-bottom: 0;\n}\n\n.rocker input {\n  opacity: 0;\n  width: 0;\n  height: 0;\n}\n\n.switch-left,\n.switch-right {\n  cursor: pointer;\n  position: absolute;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  height: 2.5em;\n  width: 3em;\n  transition: 0.2s;\n}\n\n.switch-left {\n  height: 2.4em;\n  width: 2.75em;\n  left: 0.85em;\n  bottom: 0.4em;\n  background-color: #ccc;\n  transform: rotate(15deg) skewX(15deg);\n}\n\n.switch-right {\n  right: 0.5em;\n  bottom: 0;\n  background-color: #bd5757;\n  color: #fff;\n}\n\n.switch-left::before,\n.switch-right::before {\n  content: \"\";\n  position: absolute;\n  width: 0.4em;\n  height: 2.45em;\n  bottom: -0.45em;\n  background-color: #ccc;\n  transform: skewY(-65deg);\n}\n\n.switch-left::before {\n  left: -0.4em;\n}\n\n.switch-right::before {\n  right: -0.375em;\n  background-color: transparent;\n  transform: skewY(65deg);\n}\n\ninput:checked + .switch-left {\n  background-color: #008000;\n  color: #fff;\n  bottom: 0px;\n  left: 0.5em;\n  height: 2.5em;\n  width: 3em;\n  transform: rotate(0deg) skewX(0deg);\n}\n\ninput:checked + .switch-left::before {\n  background-color: transparent;\n  width: 3.0833em;\n}\n\ninput:checked + .switch-left + .switch-right {\n  background-color: #ddd;\n  color: #888;\n  bottom: 0.4em;\n  right: 0.8em;\n  height: 2.4em;\n  width: 2.75em;\n  transform: rotate(-15deg) skewX(-15deg);\n}\n\ninput:checked + .switch-left + .switch-right::before {\n  background-color: #ccc;\n}\n\n/* Keyboard Users */\ninput:focus + .switch-left {\n  color: #333;\n}\n\ninput:checked:focus + .switch-left {\n  color: #fff;\n}\n\ninput:focus + .switch-left + .switch-right {\n  color: #fff;\n}\n\ninput:checked:focus + .switch-left + .switch-right {\n  color: #333;\n}\n</style>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "x": 370,
+        "y": 280,
+        "wires": [
+            [
+                "265a36fb.d70daa"
+            ]
+        ]
+    },
+    {
+        "id": "266ef28b.0ca20e",
+        "type": "ui_template",
+        "z": "9a977de5.1e9c9",
+        "group": "4b52fb24.f33964",
+        "name": "Flex Remote",
+        "order": 3,
+        "width": 3,
+        "height": 2,
+        "format": "<table style=\"width: 100%; text-align: center;\">\n   <tr>\n      <td>\n         <span style=\"vertical-align: middle;font-weight: bold;\">Flex Remote</span>\n      </td>\n    </tr>\n    <tr>\n      <td> \n        <label class=\"rocker rocker-mid\">\n        <input type=\"checkbox\" ng-model=\"msg.payload\" ng-change=\"send(msg)\" checked>\n        <md-tooltip md-direction=\"top\">Turn Flex Remote On or OFF!</md-tooltip>\n        <span class=\"switch-left\">On</span>\n        <span class=\"switch-right\">Off</span>\n  </label>\n      </td>\n   </tr>\n</table>\n\n<style>\n    html {\n  box-sizing: border-box;\n  font-family: 'Arial', sans-serif;\n  font-size: 75%;\n}\n*, *:before, *:after {\n  box-sizing: inherit;\n  margin:0;\n  padding:0;\n}\n\n/* Switch starts here */\n.rocker {\n  display: inline-block;\n  position: relative;\n  /*\n  SIZE OF SWITCH\n  ==============\n  All sizes are in em - therefore\n  changing the font-size here\n  will change the size of the switch.\n  See .rocker-small below as example.\n  */\n  font-size: 0.38em;\n  font-weight: bold;\n  text-align: center;\n  text-transform: uppercase;\n  color: #888;\n  width: 7em;\n  height: 4em;\n  overflow: hidden;\n  border-bottom: 0.5em solid #eee;\n}\n\n.rocker-small {\n  font-size: 0.39em; /* Sizes the switch */\n  margin: 0em;\n}\n\n.rocker-mid {\n  font-size: 1.1em; /* Sizes the switch */\n  margin: 0em;\n}\n\n.rocker::before {\n  content: \"\";\n  position: absolute;\n  top: 0.5em;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  background-color: #999;\n  border: 0.5em solid #eee;\n  border-bottom: 0;\n}\n\n.rocker input {\n  opacity: 0;\n  width: 0;\n  height: 0;\n}\n\n.switch-left,\n.switch-right {\n  cursor: pointer;\n  position: absolute;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  height: 2.5em;\n  width: 3em;\n  transition: 0.2s;\n}\n\n.switch-left {\n  height: 2.4em;\n  width: 2.75em;\n  left: 0.85em;\n  bottom: 0.4em;\n  background-color: #ccc;\n  transform: rotate(15deg) skewX(15deg);\n}\n\n.switch-right {\n  right: 0.5em;\n  bottom: 0;\n  background-color: #bd5757;\n  color: #fff;\n}\n\n.switch-left::before,\n.switch-right::before {\n  content: \"\";\n  position: absolute;\n  width: 0.4em;\n  height: 2.45em;\n  bottom: -0.45em;\n  background-color: #ccc;\n  transform: skewY(-65deg);\n}\n\n.switch-left::before {\n  left: -0.4em;\n}\n\n.switch-right::before {\n  right: -0.375em;\n  background-color: transparent;\n  transform: skewY(65deg);\n}\n\ninput:checked + .switch-left {\n  background-color: #008000;\n  color: #fff;\n  bottom: 0px;\n  left: 0.5em;\n  height: 2.5em;\n  width: 3em;\n  transform: rotate(0deg) skewX(0deg);\n}\n\ninput:checked + .switch-left::before {\n  background-color: transparent;\n  width: 3.0833em;\n}\n\ninput:checked + .switch-left + .switch-right {\n  background-color: #ddd;\n  color: #888;\n  bottom: 0.4em;\n  right: 0.8em;\n  height: 2.4em;\n  width: 2.75em;\n  transform: rotate(-15deg) skewX(-15deg);\n}\n\ninput:checked + .switch-left + .switch-right::before {\n  background-color: #ccc;\n}\n\n/* Keyboard Users */\ninput:focus + .switch-left {\n  color: #333;\n}\n\ninput:checked:focus + .switch-left {\n  color: #fff;\n}\n\ninput:focus + .switch-left + .switch-right {\n  color: #fff;\n}\n\ninput:checked:focus + .switch-left + .switch-right {\n  color: #333;\n}\n</style>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "x": 370,
+        "y": 360,
+        "wires": [
+            [
+                "3ccbb445.3470dc"
+            ]
+        ]
+    },
+    {
+        "id": "5f7814.4d7a47ec",
+        "type": "ui_template",
+        "z": "9a977de5.1e9c9",
+        "group": "4b52fb24.f33964",
+        "name": "HF Auto",
+        "order": 4,
+        "width": 3,
+        "height": 2,
+        "format": "<table style=\"width: 100%; text-align: center;\">\n   <tr>\n      <td>\n         <span style=\"vertical-align: middle;font-weight: bold;\">HF Auto</span>\n      </td>\n    </tr>\n    <tr>\n      <td> \n        <label class=\"rocker rocker-mid\">\n        <input type=\"checkbox\" ng-model=\"msg.payload\" ng-change=\"send(msg)\" checked>\n        <md-tooltip md-direction=\"top\">Turn HF Auto On or OFF!</md-tooltip>\n        <span class=\"switch-left\">On</span>\n        <span class=\"switch-right\">Off</span>\n  </label>\n      </td>\n   </tr>\n</table>\n\n<style>\n    html {\n  box-sizing: border-box;\n  font-family: 'Arial', sans-serif;\n  font-size: 75%;\n}\n*, *:before, *:after {\n  box-sizing: inherit;\n  margin:0;\n  padding:0;\n}\n\n/* Switch starts here */\n.rocker {\n  display: inline-block;\n  position: relative;\n  /*\n  SIZE OF SWITCH\n  ==============\n  All sizes are in em - therefore\n  changing the font-size here\n  will change the size of the switch.\n  See .rocker-small below as example.\n  */\n  font-size: 0.38em;\n  font-weight: bold;\n  text-align: center;\n  text-transform: uppercase;\n  color: #888;\n  width: 7em;\n  height: 4em;\n  overflow: hidden;\n  border-bottom: 0.5em solid #eee;\n}\n\n.rocker-small {\n  font-size: 0.39em; /* Sizes the switch */\n  margin: 0em;\n}\n\n.rocker-mid {\n  font-size: 1.1em; /* Sizes the switch */\n  margin: 0em;\n}\n\n.rocker::before {\n  content: \"\";\n  position: absolute;\n  top: 0.5em;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  background-color: #999;\n  border: 0.5em solid #eee;\n  border-bottom: 0;\n}\n\n.rocker input {\n  opacity: 0;\n  width: 0;\n  height: 0;\n}\n\n.switch-left,\n.switch-right {\n  cursor: pointer;\n  position: absolute;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  height: 2.5em;\n  width: 3em;\n  transition: 0.2s;\n}\n\n.switch-left {\n  height: 2.4em;\n  width: 2.75em;\n  left: 0.85em;\n  bottom: 0.4em;\n  background-color: #ccc;\n  transform: rotate(15deg) skewX(15deg);\n}\n\n.switch-right {\n  right: 0.5em;\n  bottom: 0;\n  background-color: #bd5757;\n  color: #fff;\n}\n\n.switch-left::before,\n.switch-right::before {\n  content: \"\";\n  position: absolute;\n  width: 0.4em;\n  height: 2.45em;\n  bottom: -0.45em;\n  background-color: #ccc;\n  transform: skewY(-65deg);\n}\n\n.switch-left::before {\n  left: -0.4em;\n}\n\n.switch-right::before {\n  right: -0.375em;\n  background-color: transparent;\n  transform: skewY(65deg);\n}\n\ninput:checked + .switch-left {\n  background-color: #008000;\n  color: #fff;\n  bottom: 0px;\n  left: 0.5em;\n  height: 2.5em;\n  width: 3em;\n  transform: rotate(0deg) skewX(0deg);\n}\n\ninput:checked + .switch-left::before {\n  background-color: transparent;\n  width: 3.0833em;\n}\n\ninput:checked + .switch-left + .switch-right {\n  background-color: #ddd;\n  color: #888;\n  bottom: 0.4em;\n  right: 0.8em;\n  height: 2.4em;\n  width: 2.75em;\n  transform: rotate(-15deg) skewX(-15deg);\n}\n\ninput:checked + .switch-left + .switch-right::before {\n  background-color: #ccc;\n}\n\n/* Keyboard Users */\ninput:focus + .switch-left {\n  color: #333;\n}\n\ninput:checked:focus + .switch-left {\n  color: #fff;\n}\n\ninput:focus + .switch-left + .switch-right {\n  color: #fff;\n}\n\ninput:checked:focus + .switch-left + .switch-right {\n  color: #333;\n}\n</style>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "x": 360,
+        "y": 460,
+        "wires": [
+            [
+                "e9f553c9.3a0eb"
+            ]
+        ]
+    },
+    {
+        "id": "63feb28c.3a575c",
+        "type": "ui_template",
+        "z": "9a977de5.1e9c9",
+        "group": "4b52fb24.f33964",
+        "name": "DCU2",
+        "order": 5,
+        "width": 3,
+        "height": 2,
+        "format": "<table style=\"width: 100%; text-align: center;\">\n   <tr>\n      <td>\n         <span style=\"vertical-align: middle;font-weight: bold;\">DCU2</span>\n      </td>\n    </tr>\n    <tr>\n      <td> \n        <label class=\"rocker rocker-mid\">\n        <input type=\"checkbox\" ng-model=\"msg.payload\" ng-change=\"send(msg)\" checked>\n        <md-tooltip md-direction=\"top\">Turn DCU2 On or OFF!</md-tooltip>\n        <span class=\"switch-left\">On</span>\n        <span class=\"switch-right\">Off</span>\n  </label>\n      </td>\n   </tr>\n</table>\n\n<style>\n    html {\n  box-sizing: border-box;\n  font-family: 'Arial', sans-serif;\n  font-size: 75%;\n}\n*, *:before, *:after {\n  box-sizing: inherit;\n  margin:0;\n  padding:0;\n}\n\n/* Switch starts here */\n.rocker {\n  display: inline-block;\n  position: relative;\n  /*\n  SIZE OF SWITCH\n  ==============\n  All sizes are in em - therefore\n  changing the font-size here\n  will change the size of the switch.\n  See .rocker-small below as example.\n  */\n  font-size: 0.38em;\n  font-weight: bold;\n  text-align: center;\n  text-transform: uppercase;\n  color: #888;\n  width: 7em;\n  height: 4em;\n  overflow: hidden;\n  border-bottom: 0.5em solid #eee;\n}\n\n.rocker-small {\n  font-size: 0.39em; /* Sizes the switch */\n  margin: 0em;\n}\n\n.rocker-mid {\n  font-size: 1.1em; /* Sizes the switch */\n  margin: 0em;\n}\n\n.rocker::before {\n  content: \"\";\n  position: absolute;\n  top: 0.5em;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  background-color: #999;\n  border: 0.5em solid #eee;\n  border-bottom: 0;\n}\n\n.rocker input {\n  opacity: 0;\n  width: 0;\n  height: 0;\n}\n\n.switch-left,\n.switch-right {\n  cursor: pointer;\n  position: absolute;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  height: 2.5em;\n  width: 3em;\n  transition: 0.2s;\n}\n\n.switch-left {\n  height: 2.4em;\n  width: 2.75em;\n  left: 0.85em;\n  bottom: 0.4em;\n  background-color: #ccc;\n  transform: rotate(15deg) skewX(15deg);\n}\n\n.switch-right {\n  right: 0.5em;\n  bottom: 0;\n  background-color: #bd5757;\n  color: #fff;\n}\n\n.switch-left::before,\n.switch-right::before {\n  content: \"\";\n  position: absolute;\n  width: 0.4em;\n  height: 2.45em;\n  bottom: -0.45em;\n  background-color: #ccc;\n  transform: skewY(-65deg);\n}\n\n.switch-left::before {\n  left: -0.4em;\n}\n\n.switch-right::before {\n  right: -0.375em;\n  background-color: transparent;\n  transform: skewY(65deg);\n}\n\ninput:checked + .switch-left {\n  background-color: #008000;\n  color: #fff;\n  bottom: 0px;\n  left: 0.5em;\n  height: 2.5em;\n  width: 3em;\n  transform: rotate(0deg) skewX(0deg);\n}\n\ninput:checked + .switch-left::before {\n  background-color: transparent;\n  width: 3.0833em;\n}\n\ninput:checked + .switch-left + .switch-right {\n  background-color: #ddd;\n  color: #888;\n  bottom: 0.4em;\n  right: 0.8em;\n  height: 2.4em;\n  width: 2.75em;\n  transform: rotate(-15deg) skewX(-15deg);\n}\n\ninput:checked + .switch-left + .switch-right::before {\n  background-color: #ccc;\n}\n\n/* Keyboard Users */\ninput:focus + .switch-left {\n  color: #333;\n}\n\ninput:checked:focus + .switch-left {\n  color: #fff;\n}\n\ninput:focus + .switch-left + .switch-right {\n  color: #fff;\n}\n\ninput:checked:focus + .switch-left + .switch-right {\n  color: #333;\n}\n</style>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "x": 370,
+        "y": 520,
+        "wires": [
+            [
+                "56eeb108.4989a"
+            ]
+        ]
+    },
+    {
+        "id": "cabfedf.075f11",
+        "type": "ui_template",
+        "z": "9a977de5.1e9c9",
+        "group": "4b52fb24.f33964",
+        "name": "FT-991",
+        "order": 6,
+        "width": 3,
+        "height": 2,
+        "format": "<table style=\"width: 100%; text-align: center;\">\n   <tr>\n      <td>\n         <span style=\"vertical-align: middle;font-weight: bold;\">FT-991</span>\n      </td>\n    </tr>\n    <tr>\n      <td> \n        <label class=\"rocker rocker-mid\">\n        <input type=\"checkbox\" ng-model=\"msg.payload\" ng-change=\"send(msg)\" checked>\n        <md-tooltip md-direction=\"top\">Turn FT-991 On or OFF!</md-tooltip>\n        <span class=\"switch-left\">On</span>\n        <span class=\"switch-right\">Off</span>\n  </label>\n      </td>\n   </tr>\n</table>\n\n<style>\n    html {\n  box-sizing: border-box;\n  font-family: 'Arial', sans-serif;\n  font-size: 75%;\n}\n*, *:before, *:after {\n  box-sizing: inherit;\n  margin:0;\n  padding:0;\n}\n\n/* Switch starts here */\n.rocker {\n  display: inline-block;\n  position: relative;\n  /*\n  SIZE OF SWITCH\n  ==============\n  All sizes are in em - therefore\n  changing the font-size here\n  will change the size of the switch.\n  See .rocker-small below as example.\n  */\n  font-size: 0.38em;\n  font-weight: bold;\n  text-align: center;\n  text-transform: uppercase;\n  color: #888;\n  width: 7em;\n  height: 4em;\n  overflow: hidden;\n  border-bottom: 0.5em solid #eee;\n}\n\n.rocker-small {\n  font-size: 0.39em; /* Sizes the switch */\n  margin: 0em;\n}\n\n.rocker-mid {\n  font-size: 1.1em; /* Sizes the switch */\n  margin: 0em;\n}\n\n.rocker::before {\n  content: \"\";\n  position: absolute;\n  top: 0.5em;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  background-color: #999;\n  border: 0.5em solid #eee;\n  border-bottom: 0;\n}\n\n.rocker input {\n  opacity: 0;\n  width: 0;\n  height: 0;\n}\n\n.switch-left,\n.switch-right {\n  cursor: pointer;\n  position: absolute;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  height: 2.5em;\n  width: 3em;\n  transition: 0.2s;\n}\n\n.switch-left {\n  height: 2.4em;\n  width: 2.75em;\n  left: 0.85em;\n  bottom: 0.4em;\n  background-color: #ccc;\n  transform: rotate(15deg) skewX(15deg);\n}\n\n.switch-right {\n  right: 0.5em;\n  bottom: 0;\n  background-color: #bd5757;\n  color: #fff;\n}\n\n.switch-left::before,\n.switch-right::before {\n  content: \"\";\n  position: absolute;\n  width: 0.4em;\n  height: 2.45em;\n  bottom: -0.45em;\n  background-color: #ccc;\n  transform: skewY(-65deg);\n}\n\n.switch-left::before {\n  left: -0.4em;\n}\n\n.switch-right::before {\n  right: -0.375em;\n  background-color: transparent;\n  transform: skewY(65deg);\n}\n\ninput:checked + .switch-left {\n  background-color: #008000;\n  color: #fff;\n  bottom: 0px;\n  left: 0.5em;\n  height: 2.5em;\n  width: 3em;\n  transform: rotate(0deg) skewX(0deg);\n}\n\ninput:checked + .switch-left::before {\n  background-color: transparent;\n  width: 3.0833em;\n}\n\ninput:checked + .switch-left + .switch-right {\n  background-color: #ddd;\n  color: #888;\n  bottom: 0.4em;\n  right: 0.8em;\n  height: 2.4em;\n  width: 2.75em;\n  transform: rotate(-15deg) skewX(-15deg);\n}\n\ninput:checked + .switch-left + .switch-right::before {\n  background-color: #ccc;\n}\n\n/* Keyboard Users */\ninput:focus + .switch-left {\n  color: #333;\n}\n\ninput:checked:focus + .switch-left {\n  color: #fff;\n}\n\ninput:focus + .switch-left + .switch-right {\n  color: #fff;\n}\n\ninput:checked:focus + .switch-left + .switch-right {\n  color: #333;\n}\n</style>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "x": 400,
+        "y": 620,
+        "wires": [
+            [
+                "ccee40e8.1f0d2"
+            ]
+        ]
+    },
+    {
+        "id": "bd6e15a4.b96e98",
+        "type": "ui_template",
+        "z": "9a977de5.1e9c9",
+        "group": "4b52fb24.f33964",
+        "name": "Pi3",
+        "order": 7,
+        "width": 3,
+        "height": 2,
+        "format": "<table style=\"width: 100%; text-align: center;\">\n   <tr>\n      <td>\n         <span style=\"vertical-align: middle;font-weight: bold;\">Pi3</span>\n      </td>\n    </tr>\n    <tr>\n      <td> \n        <label class=\"rocker rocker-mid\">\n        <input type=\"checkbox\" ng-model=\"msg.payload\" ng-change=\"send(msg)\" checked>\n        <md-tooltip md-direction=\"top\">Turn Pi3 On or OFF!</md-tooltip>\n        <span class=\"switch-left\">On</span>\n        <span class=\"switch-right\">Off</span>\n  </label>\n      </td>\n   </tr>\n</table>\n\n<style>\n    html {\n  box-sizing: border-box;\n  font-family: 'Arial', sans-serif;\n  font-size: 75%;\n}\n*, *:before, *:after {\n  box-sizing: inherit;\n  margin:0;\n  padding:0;\n}\n\n/* Switch starts here */\n.rocker {\n  display: inline-block;\n  position: relative;\n  /*\n  SIZE OF SWITCH\n  ==============\n  All sizes are in em - therefore\n  changing the font-size here\n  will change the size of the switch.\n  See .rocker-small below as example.\n  */\n  font-size: 0.38em;\n  font-weight: bold;\n  text-align: center;\n  text-transform: uppercase;\n  color: #888;\n  width: 7em;\n  height: 4em;\n  overflow: hidden;\n  border-bottom: 0.5em solid #eee;\n}\n\n.rocker-small {\n  font-size: 0.39em; /* Sizes the switch */\n  margin: 0em;\n}\n\n.rocker-mid {\n  font-size: 1.1em; /* Sizes the switch */\n  margin: 0em;\n}\n\n.rocker::before {\n  content: \"\";\n  position: absolute;\n  top: 0.5em;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  background-color: #999;\n  border: 0.5em solid #eee;\n  border-bottom: 0;\n}\n\n.rocker input {\n  opacity: 0;\n  width: 0;\n  height: 0;\n}\n\n.switch-left,\n.switch-right {\n  cursor: pointer;\n  position: absolute;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  height: 2.5em;\n  width: 3em;\n  transition: 0.2s;\n}\n\n.switch-left {\n  height: 2.4em;\n  width: 2.75em;\n  left: 0.85em;\n  bottom: 0.4em;\n  background-color: #ccc;\n  transform: rotate(15deg) skewX(15deg);\n}\n\n.switch-right {\n  right: 0.5em;\n  bottom: 0;\n  background-color: #bd5757;\n  color: #fff;\n}\n\n.switch-left::before,\n.switch-right::before {\n  content: \"\";\n  position: absolute;\n  width: 0.4em;\n  height: 2.45em;\n  bottom: -0.45em;\n  background-color: #ccc;\n  transform: skewY(-65deg);\n}\n\n.switch-left::before {\n  left: -0.4em;\n}\n\n.switch-right::before {\n  right: -0.375em;\n  background-color: transparent;\n  transform: skewY(65deg);\n}\n\ninput:checked + .switch-left {\n  background-color: #008000;\n  color: #fff;\n  bottom: 0px;\n  left: 0.5em;\n  height: 2.5em;\n  width: 3em;\n  transform: rotate(0deg) skewX(0deg);\n}\n\ninput:checked + .switch-left::before {\n  background-color: transparent;\n  width: 3.0833em;\n}\n\ninput:checked + .switch-left + .switch-right {\n  background-color: #ddd;\n  color: #888;\n  bottom: 0.4em;\n  right: 0.8em;\n  height: 2.4em;\n  width: 2.75em;\n  transform: rotate(-15deg) skewX(-15deg);\n}\n\ninput:checked + .switch-left + .switch-right::before {\n  background-color: #ccc;\n}\n\n/* Keyboard Users */\ninput:focus + .switch-left {\n  color: #333;\n}\n\ninput:checked:focus + .switch-left {\n  color: #fff;\n}\n\ninput:focus + .switch-left + .switch-right {\n  color: #fff;\n}\n\ninput:checked:focus + .switch-left + .switch-right {\n  color: #333;\n}\n</style>",
+        "storeOutMessages": false,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "x": 410,
+        "y": 740,
+        "wires": [
+            [
+                "5744419b.32b65"
+            ]
+        ]
+    },
+    {
+        "id": "2734b72e.bad478",
+        "type": "ui_template",
+        "z": "9a977de5.1e9c9",
+        "group": "4b52fb24.f33964",
+        "name": "MFJ Injector",
+        "order": 8,
+        "width": 3,
+        "height": 2,
+        "format": "<table style=\"width: 100%; text-align: center;\">\n   <tr>\n      <td>\n         <span style=\"vertical-align: middle;font-weight: bold;\">MFJ Injector</span>\n      </td>\n    </tr>\n    <tr>\n      <td> \n        <label class=\"rocker rocker-mid\">\n        <input type=\"checkbox\" ng-model=\"msg.payload\" ng-change=\"send(msg)\" checked>\n        <md-tooltip md-direction=\"top\">Turn MFJ Injector On or OFF!</md-tooltip>\n        <span class=\"switch-left\">On</span>\n        <span class=\"switch-right\">Off</span>\n  </label>\n      </td>\n   </tr>\n</table>\n\n<style>\n    html {\n  box-sizing: border-box;\n  font-family: 'Arial', sans-serif;\n  font-size: 75%;\n}\n*, *:before, *:after {\n  box-sizing: inherit;\n  margin:0;\n  padding:0;\n}\n\n/* Switch starts here */\n.rocker {\n  display: inline-block;\n  position: relative;\n  /*\n  SIZE OF SWITCH\n  ==============\n  All sizes are in em - therefore\n  changing the font-size here\n  will change the size of the switch.\n  See .rocker-small below as example.\n  */\n  font-size: 0.38em;\n  font-weight: bold;\n  text-align: center;\n  text-transform: uppercase;\n  color: #888;\n  width: 7em;\n  height: 4em;\n  overflow: hidden;\n  border-bottom: 0.5em solid #eee;\n}\n\n.rocker-small {\n  font-size: 0.39em; /* Sizes the switch */\n  margin: 0em;\n}\n\n.rocker-mid {\n  font-size: 1.1em; /* Sizes the switch */\n  margin: 0em;\n}\n\n.rocker::before {\n  content: \"\";\n  position: absolute;\n  top: 0.5em;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  background-color: #999;\n  border: 0.5em solid #eee;\n  border-bottom: 0;\n}\n\n.rocker input {\n  opacity: 0;\n  width: 0;\n  height: 0;\n}\n\n.switch-left,\n.switch-right {\n  cursor: pointer;\n  position: absolute;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  height: 2.5em;\n  width: 3em;\n  transition: 0.2s;\n}\n\n.switch-left {\n  height: 2.4em;\n  width: 2.75em;\n  left: 0.85em;\n  bottom: 0.4em;\n  background-color: #ccc;\n  transform: rotate(15deg) skewX(15deg);\n}\n\n.switch-right {\n  right: 0.5em;\n  bottom: 0;\n  background-color: #bd5757;\n  color: #fff;\n}\n\n.switch-left::before,\n.switch-right::before {\n  content: \"\";\n  position: absolute;\n  width: 0.4em;\n  height: 2.45em;\n  bottom: -0.45em;\n  background-color: #ccc;\n  transform: skewY(-65deg);\n}\n\n.switch-left::before {\n  left: -0.4em;\n}\n\n.switch-right::before {\n  right: -0.375em;\n  background-color: transparent;\n  transform: skewY(65deg);\n}\n\ninput:checked + .switch-left {\n  background-color: #008000;\n  color: #fff;\n  bottom: 0px;\n  left: 0.5em;\n  height: 2.5em;\n  width: 3em;\n  transform: rotate(0deg) skewX(0deg);\n}\n\ninput:checked + .switch-left::before {\n  background-color: transparent;\n  width: 3.0833em;\n}\n\ninput:checked + .switch-left + .switch-right {\n  background-color: #ddd;\n  color: #888;\n  bottom: 0.4em;\n  right: 0.8em;\n  height: 2.4em;\n  width: 2.75em;\n  transform: rotate(-15deg) skewX(-15deg);\n}\n\ninput:checked + .switch-left + .switch-right::before {\n  background-color: #ccc;\n}\n\n/* Keyboard Users */\ninput:focus + .switch-left {\n  color: #333;\n}\n\ninput:checked:focus + .switch-left {\n  color: #fff;\n}\n\ninput:focus + .switch-left + .switch-right {\n  color: #fff;\n}\n\ninput:checked:focus + .switch-left + .switch-right {\n  color: #333;\n}\n</style>",
+        "storeOutMessages": false,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "x": 470,
+        "y": 820,
+        "wires": [
+            [
+                "12372b14.289825"
+            ]
+        ]
+    },
+    {
+        "id": "c59a56ee.250a68",
+        "type": "mqtt-broker",
+        "z": "",
+        "name": "SMX",
+        "broker": "10.0.0.30",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": false,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "4b52fb24.f33964",
+        "type": "ui_group",
+        "z": "",
+        "name": "DLI",
+        "tab": "d0b074b1.4c1b78",
+        "order": 2,
+        "disp": true,
+        "width": 6,
+        "collapse": false
+    },
+    {
+        "id": "d0b074b1.4c1b78",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Radio",
+        "icon": "dashboard",
+        "order": 10,
+        "disabled": false,
+        "hidden": false
+    }
+]
